@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import LearnUseState from './hooks/LearnUseState'
+import LearnUseContext from './hooks/LearnUseContext'
+import { LearnUseEffect, LearnUseEffectTimes, LearnUseEffectTimesFun } from './hooks/LearnUseEffect'
+import LearnUseRef from './hooks/LearnUseRef'
+import LearnForwardRef from './hooks/LearnForwardRef'
+import LearnUseImperativeHandle from './hooks/LearnUseImperativeHandle'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <h3>我是App组件</h3>
+
+            <LearnUseState />
+
+            <LearnUseContext />
+
+            {/* <LearnUseEffect /> */}
+            {/* <LearnUseEffectTimes /> */}
+            <LearnUseEffectTimesFun />
+
+            <LearnUseRef />
+
+            <LearnForwardRef />
+
+            <LearnUseImperativeHandle />
+        </div>
+    );
 }
 
 export default App;
