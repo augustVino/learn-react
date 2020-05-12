@@ -252,12 +252,42 @@ export default function LearnUseImperativeHandle(){
 }
 ```
 
+
+## `useMemo()`
+`useMemo()`的作用与`shouldComponentUpdate`类似，在渲染过程中避免重复渲染的问题，可以控制组件什么时候需要更新。
+
+当状态或者父组件传来的属性发生变化时，更新组件。
+
+- `useMemo`用的是`memoization`来提高性能的
+- `memoization`是 JavaScript 中的一种缓存技术
+
+如果我们有CPU密集型操作，我们可以通过将初始操作的结果储存在缓存中来优化使用。如果操作必然会再次执行，我们将不再麻烦再次使用我们的cpu，因为相同结果的结果储存在某个地方，我们只是简单的返回结果。
+
+记住这个是以空间换速度，所以最好确定你是否值得这么做，有些场景很有必要使用。
+
+`useMemo()`是一个函数，有两个参数，第一个参数是个函数，第二个参数是个数组
+
+`useMemo(() => {}, [可以不写])`
+
+useMemo 与 useEffect 执行的时间不同，useEffect 是在 componentDidMount 以后执行的，而 useMemo 是在组件渲染过程中执行的。
+
+## `useCallback()`
+作用：避免组件重复渲染，提高性能（useMemo）
+
+同样用到缓存技术，和 useMemo 不同的是，useCallback 缓存的是个函数，是个函数就可以执行。
+
+useCallback 有两个参数，第一个参数是个函数，第二个参数是个数组。
+
+`useCallback(() => {}, [可以不写])`
+
+`const callback = useCallback(() => {}, [])`. callback 是个函数，可以直接 `callback()` 执行。
+
 ## 自定义 Hook
 自定义 Hook 是一个函数，其名称以 `use` 开头，函数内部可以调用其他的 Hook
 
 ```js
 const useWinResize = () => {
-    
+
     const [size, setSize] = useState({
         width: document.documentElement.clientWidth,
         height: document.documentElement.clientHeight

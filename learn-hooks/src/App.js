@@ -5,6 +5,8 @@ import { LearnUseEffect, LearnUseEffectTimes, LearnUseEffectTimesFun } from './h
 import LearnUseRef from './hooks/LearnUseRef'
 import LearnForwardRef from './hooks/LearnForwardRef'
 import LearnUseImperativeHandle from './hooks/LearnUseImperativeHandle'
+import LearnUseMemo from './hooks/LearnUseMemo'
+
 function App() {
     return (
         <div className="App">
@@ -23,6 +25,8 @@ function App() {
             <LearnForwardRef />
 
             <LearnUseImperativeHandle />
+
+            <LearnUseMemo />
         </div>
     );
 }
